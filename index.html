@@ -3,7 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>ElectroShop - Smart Appliances, Better Life</title>
+
+<!-- SEO Meta Tags -->
+<title>ElectroShop – Premium Home Appliances Store | Refrigerators, ACs, Washing Machines & More</title>
+<meta name="description" content="ElectroShop is your trusted local electronics and home appliances store. Shop refrigerators, washing machines, televisions, air conditioners, microwaves and more at the best prices with expert support.">
+<meta name="keywords" content="home appliances, refrigerators, washing machines, televisions, air conditioners, microwaves, electronics store, ElectroShop">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.electroshop.in/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="ElectroShop – Premium Home Appliances Store">
+<meta property="og:description" content="Your trusted local store for refrigerators, ACs, washing machines, TVs and more. Quality products, unbeatable prices, expert service.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.electroshop.in/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&fit=crop&auto=format">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ElectroShop – Premium Home Appliances Store">
+<meta name="twitter:description" content="Quality home appliances at the best prices. Trusted by thousands of happy customers.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&fit=crop&auto=format">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
@@ -161,11 +181,12 @@ nav{position:sticky;top:0;z-index:1000;background:var(--white);min-height:70px;
 .app-micro{width:130px;height:100px;bottom:220px;right:30px;z-index:4;}
 .app-vacuum{width:120px;height:180px;bottom:80px;right:10px;z-index:4;}
 
-/* HERO APPLIANCES - MOBILE (single featured image) */
+/* HERO APPLIANCES - MOBILE */
 .hero-mobile-img{display:none;width:100%;max-width:320px;margin:0 auto 20px;
   border-radius:14px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.35);}
 .hero-mobile-img img{width:100%;height:200px;object-fit:cover;display:block;}
 
+/* HERO ARROWS - fixed positioning so they don't overlap content */
 .hero-prev,.hero-next{position:absolute;top:50%;transform:translateY(-50%);z-index:10;
   background:rgba(255,255,255,.9);width:44px;height:44px;border-radius:50%;
   border:none;cursor:pointer;font-size:16px;color:var(--dark);
@@ -178,30 +199,34 @@ nav{position:sticky;top:0;z-index:1000;background:var(--white);min-height:70px;
   border:none;cursor:pointer;transition:background .3s;padding:0;}
 .hero-dot.active{background:var(--yellow);}
 
-/* ABOUT + PRODUCTS */
-.about-products{padding:70px 40px;display:grid;grid-template-columns:40% 60%;gap:30px;align-items:start;}
-.about-card{display:flex;flex-direction:column;gap:0;}
-.about-store-img{width:100%;height:220px;object-fit:cover;border-radius:10px 10px 0 0;}
-.about-text{background:#fff;border:1px solid var(--border);border-top:none;
-  border-radius:0 0 10px 10px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,.06);}
-.about-text h2{font-size:20px;font-weight:700;margin-bottom:10px;}
+/* ---- STACKED LAYOUT: About then Products ---- */
+.about-products-wrapper{padding:70px 40px;display:flex;flex-direction:column;gap:50px;}
+
+/* About section */
+.about-card{display:flex;flex-direction:row;gap:0;border:1px solid var(--border);
+  border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);background:#fff;}
+.about-store-img{width:340px;min-width:280px;object-fit:cover;display:block;}
+.about-text{padding:32px;display:flex;flex-direction:column;justify-content:center;}
+.about-text h2{font-size:22px;font-weight:700;margin-bottom:12px;}
 .about-text h2 span{color:var(--blue);}
 .about-text p{font-size:13px;color:var(--gray);line-height:1.7;margin-bottom:16px;}
 .feature-list{list-style:none;margin-bottom:20px;}
 .feature-list li{display:flex;align-items:center;gap:10px;font-size:13px;
   color:var(--dark);padding:5px 0;font-weight:500;}
 .feature-list li i{color:var(--blue);font-size:14px;}
+
+/* Products section */
 .products-section{}
 .section-heading{display:flex;align-items:center;gap:16px;margin-bottom:20px;}
-.section-heading::before{content:'';width:30px;height:3px;background:var(--yellow);}
+.section-heading::before{content:'';width:30px;height:3px;background:var(--yellow);flex-shrink:0;}
 .section-heading h2{font-size:22px;font-weight:700;}
 .section-heading h2 span{color:var(--blue);}
-.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px;}
 .product-card{background:#fff;border:1px solid var(--border);border-radius:10px;
-  padding:14px 10px;text-align:center;cursor:pointer;
+  padding:16px 12px;text-align:center;cursor:pointer;
   transition:transform .25s,box-shadow .25s;box-shadow:0 2px 10px rgba(0,0,0,.05);}
 .product-card:hover{transform:translateY(-4px);box-shadow:0 10px 25px rgba(65,105,225,.15);}
-.product-card img{width:80px;height:70px;object-fit:cover;border-radius:8px;margin-bottom:8px;}
+.product-card img{width:96px;height:84px;object-fit:cover;border-radius:8px;margin-bottom:8px;}
 .product-card p{font-size:11.5px;font-weight:600;color:var(--dark);}
 .btn-blue{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;
   padding:12px 28px;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none;
@@ -217,7 +242,7 @@ nav{position:sticky;top:0;z-index:1000;background:var(--white);min-height:70px;
   background:var(--yellow);display:block;flex-shrink:0;}
 .gallery-section h2 span,.testimonial-section h2 span{color:var(--blue);}
 .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 20px;}
-.gallery-item{border-radius:8px;overflow:hidden;height:130px;cursor:pointer;}
+.gallery-item{border-radius:8px;overflow:hidden;height:130px;cursor:pointer;position:relative;}
 .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
 .gallery-item:hover img{transform:scale(1.08);}
 .testimonial-section{padding-left:10px;}
@@ -302,9 +327,61 @@ footer{background:var(--blue);padding:50px 40px 30px;color:#fff;}
 .copyright{background:var(--yellow);padding:12px 40px;display:flex;justify-content:space-between;
   align-items:center;font-size:13px;font-weight:600;color:var(--dark);flex-wrap:wrap;gap:6px;}
 
+/* ===================== PRODUCT MODAL ===================== */
+.modal-overlay{
+  position:fixed;top:0;left:0;right:0;bottom:0;
+  background:rgba(0,0,0,.65);z-index:9000;
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;
+  opacity:0;pointer-events:none;transition:opacity .3s ease;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal-box{
+  background:#fff;border-radius:14px;max-width:520px;width:100%;
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
+  transform:translateY(30px) scale(.96);transition:transform .3s ease,opacity .3s ease;
+  overflow:hidden;position:relative;}
+.modal-overlay.open .modal-box{transform:translateY(0) scale(1);}
+.modal-close{
+  position:absolute;top:14px;right:14px;z-index:10;
+  width:34px;height:34px;border-radius:50%;background:#f0f0f0;
+  border:none;cursor:pointer;font-size:16px;color:var(--dark);
+  display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.modal-close:hover{background:var(--blue);color:#fff;}
+.modal-img{width:100%;height:240px;object-fit:cover;display:block;}
+.modal-body{padding:24px;}
+.modal-body h3{font-size:20px;font-weight:700;margin-bottom:10px;color:var(--dark);}
+.modal-body p{font-size:13px;color:var(--gray);line-height:1.7;}
+.modal-body .modal-tag{
+  display:inline-block;background:var(--light);color:var(--blue);
+  font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;margin-bottom:12px;}
+
+/* ===================== GALLERY MODAL ===================== */
+.gallery-modal-overlay{
+  position:fixed;top:0;left:0;right:0;bottom:0;
+  background:rgba(0,0,0,.88);z-index:9100;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  padding:20px;
+  opacity:0;pointer-events:none;transition:opacity .3s ease;}
+.gallery-modal-overlay.open{opacity:1;pointer-events:all;}
+.gallery-modal-img-wrap{position:relative;max-width:780px;width:100%;}
+.gallery-modal-img-wrap img{width:100%;max-height:70vh;object-fit:contain;
+  border-radius:10px;display:block;
+  transform:scale(.95);transition:transform .3s ease;}
+.gallery-modal-overlay.open .gallery-modal-img-wrap img{transform:scale(1);}
+.gallery-modal-close{
+  position:absolute;top:-18px;right:-18px;z-index:10;
+  width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.15);
+  border:2px solid rgba(255,255,255,.4);cursor:pointer;font-size:18px;color:#fff;
+  display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.gallery-modal-close:hover{background:var(--blue);}
+.gallery-modal-caption{
+  margin-top:16px;color:rgba(255,255,255,.8);font-size:14px;font-weight:500;text-align:center;}
+
 /* ===================== RESPONSIVE ===================== */
 @media(max-width:1100px){
-  .about-products{grid-template-columns:1fr;padding:50px 32px;}
+  .about-products-wrapper{padding:50px 32px;}
+  .about-card{flex-direction:column;}
+  .about-store-img{width:100%;height:220px;min-width:unset;}
   .gallery-testimonial{grid-template-columns:1fr;padding:50px 32px;}
   .contact-section{grid-template-columns:1fr 1fr;padding:50px 32px;}
   .footer-grid{grid-template-columns:1fr 1fr;}
@@ -325,7 +402,7 @@ footer{background:var(--blue);padding:50px 40px 30px;color:#fff;}
   .top-bar{padding:8px 20px;font-size:12px;}
   footer{padding:40px 24px 24px;}
   .footer-grid{gap:28px;}
-  .about-products{padding:40px 20px;}
+  .about-products-wrapper{padding:40px 20px;}
   .gallery-testimonial{padding:40px 20px;}
   .contact-section{padding:40px 20px;grid-template-columns:1fr;}
   .copyright{padding:12px 20px;}
@@ -343,7 +420,7 @@ footer{background:var(--blue);padding:50px 40px 30px;color:#fff;}
 
   /* HERO MOBILE */
   .hero{min-height:auto;}
-  .hero-slide{grid-template-columns:1fr;padding:28px 18px 90px;align-items:start;}
+  .hero-slide{grid-template-columns:1fr;padding:28px 60px 90px;align-items:start;}
   .hero-appliances{display:none;}
   .hero-mobile-img{display:block;}
   .hero-content h1{font-size:28px;}
@@ -351,18 +428,20 @@ footer{background:var(--blue);padding:50px 40px 30px;color:#fff;}
   .btn-yellow{font-size:14px;padding:12px 22px;}
   .hero::after{height:60px;}
   .hero-yellow-shape{width:140px;height:44px;bottom:44px;}
-  .hero-prev{left:10px;width:38px;height:38px;}
-  .hero-next{right:10px;width:38px;height:38px;}
+  /* Keep arrows outside text area on mobile */
+  .hero-prev{left:8px;width:36px;height:36px;font-size:13px;}
+  .hero-next{right:8px;width:36px;height:36px;font-size:13px;}
 
-  .about-products{padding:32px 14px;gap:24px;}
-  .about-store-img{height:180px;}
+  .about-products-wrapper{padding:32px 14px;gap:32px;}
+  .about-card{flex-direction:column;}
+  .about-store-img{width:100%;height:180px;min-width:unset;}
   .about-text{padding:18px;}
   .about-text h2{font-size:18px;}
   .feature-list li{font-size:12px;}
   .section-heading h2{font-size:19px;}
   .product-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
   .product-card{padding:12px 8px;}
-  .product-card img{width:70px;height:60px;}
+  .product-card img{width:84px;height:74px;}
   .product-card p{font-size:11px;}
 
   .gallery-testimonial{padding:32px 14px;gap:28px;}
@@ -389,6 +468,12 @@ footer{background:var(--blue);padding:50px 40px 30px;color:#fff;}
   .whatsapp-btn{bottom:16px;right:14px;border-radius:50%;width:50px;height:50px;padding:0;justify-content:center;}
   .whatsapp-btn span{display:none;}
   .whatsapp-btn i{font-size:22px;}
+
+  /* Modals on mobile */
+  .modal-img{height:180px;}
+  .modal-body{padding:16px;}
+  .modal-body h3{font-size:17px;}
+  .gallery-modal-close{top:-14px;right:-10px;}
 }
 @media(max-width:380px){
   nav{padding:6px 10px;}
@@ -396,6 +481,7 @@ footer{background:var(--blue);padding:50px 40px 30px;color:#fff;}
   .logo-icon{width:32px;height:32px;font-size:15px;}
   .hero-content h1{font-size:23px;}
   .hero-mobile-img img{height:170px;}
+  .hero-slide{padding:28px 50px 90px;}
   .product-grid{gap:8px;}
   .gallery-item{height:90px;}
   .testi-slide{padding:16px 12px;}
@@ -403,7 +489,7 @@ footer{background:var(--blue);padding:50px 40px 30px;color:#fff;}
 }
 @media(hover:none) and (pointer:coarse){
   .btn-yellow,.btn-blue,.btn-contact{min-height:46px;display:inline-flex;align-items:center;}
-  .hero-prev,.hero-next{width:42px;height:42px;}
+  .hero-prev,.hero-next{width:40px;height:40px;}
   .testi-arrow{width:40px;height:40px;}
   .product-card{cursor:default;}
 }
@@ -414,64 +500,64 @@ footer{background:var(--blue);padding:50px 40px 30px;color:#fff;}
 <!-- TOP CONTACT BAR -->
 <div class="top-bar">
   <div class="top-bar-left">
-    <i class="fa fa-map-marker-alt"></i>
-    <span>123, Main Street, Your City, India</span>
+    <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
+    <span>123, Main Street, Your City – 600001, India</span>
   </div>
   <div class="top-bar-right">
-    <i class="fa fa-phone"></i>
-    <span>+91 8016822285</span>
+    <i class="fa fa-phone" aria-hidden="true"></i>
+    <span>+91 80168 22285</span>
     <div class="social-icons" style="display:flex;gap:10px;">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
     </div>
   </div>
 </div>
 
 <!-- NAVBAR -->
-<nav id="navbar">
+<nav id="navbar" role="navigation" aria-label="Main navigation">
   <div class="logo">
-    <div class="logo-icon"><i class="fa fa-tv"></i></div>
+    <div class="logo-icon" aria-hidden="true"><i class="fa fa-tv"></i></div>
     <div class="logo-text">
       <h2><span>Electro</span>Shop</h2>
       <p>Smart Appliances, Better Life</p>
     </div>
   </div>
-  <ul class="nav-menu">
-    <li><a href="#home" class="active">Home</a></li>
-    <li><a href="#about">About Us</a></li>
-    <li class="has-dropdown">
-      <a href="#products">Our Products <i class="fa fa-chevron-down dd-arrow"></i></a>
-      <div class="nav-dropdown">
-        <a href="#products"><img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=64&h=52&fit=crop&auto=format" alt="">Refrigerators</a>
-        <a href="#products"><img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=64&h=52&fit=crop&auto=format" alt="">Washing Machines</a>
-        <a href="#products"><img src="https://images.unsplash.com/photo-1593359677879-a4bb92f4e5ba?w=64&h=52&fit=crop&auto=format" alt="">Televisions</a>
-        <a href="#products"><img src="https://images.unsplash.com/photo-1599577180412-f2f99b8f03a7?w=64&h=52&fit=crop&auto=format" alt="">Air Conditioners</a>
-        <a href="#products"><img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=64&h=52&fit=crop&auto=format" alt="">Microwaves</a>
-        <a href="#products"><img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?w=64&h=52&fit=crop&auto=format" alt="">More Appliances</a>
+  <ul class="nav-menu" role="menubar">
+    <li role="none"><a href="#home" class="active" role="menuitem">Home</a></li>
+    <li role="none"><a href="#about" role="menuitem">About Us</a></li>
+    <li class="has-dropdown" role="none">
+      <a href="#products" role="menuitem" aria-haspopup="true">Our Products <i class="fa fa-chevron-down dd-arrow" aria-hidden="true"></i></a>
+      <div class="nav-dropdown" role="menu">
+        <a href="#products" role="menuitem"><img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=64&h=52&fit=crop&auto=format" alt="Refrigerators" loading="lazy">Refrigerators</a>
+        <a href="#products" role="menuitem"><img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=64&h=52&fit=crop&auto=format" alt="Washing Machines" loading="lazy">Washing Machines</a>
+        <a href="#products" role="menuitem"><img src="https://images.unsplash.com/photo-1593359677879-a4bb92f4e5ba?w=64&h=52&fit=crop&auto=format" alt="Televisions" loading="lazy">Televisions</a>
+        <a href="#products" role="menuitem"><img src="https://images.unsplash.com/photo-1599577180412-f2f99b8f03a7?w=64&h=52&fit=crop&auto=format" alt="Air Conditioners" loading="lazy">Air Conditioners</a>
+        <a href="#products" role="menuitem"><img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=64&h=52&fit=crop&auto=format" alt="Microwaves" loading="lazy">Microwaves</a>
+        <a href="#products" role="menuitem"><img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?w=64&h=52&fit=crop&auto=format" alt="More Appliances" loading="lazy">More Appliances</a>
       </div>
     </li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#reviews">Reviews</a></li>
-    <li><a href="#contact">Contact Us</a></li>
+    <li role="none"><a href="#gallery" role="menuitem">Gallery</a></li>
+    <li role="none"><a href="#reviews" role="menuitem">Reviews</a></li>
+    <li role="none"><a href="#contact" role="menuitem">Contact Us</a></li>
   </ul>
   <a href="#contact" class="btn-contact">Contact Now</a>
-  <button class="hamburger" id="hamburger" aria-label="Open menu">
+  <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <!-- MOBILE DRAWER -->
-<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
   <div class="mobile-drawer">
     <div class="drawer-header">
       <div class="drawer-logo">
-        <div class="logo-icon"><i class="fa fa-tv"></i></div>
+        <div class="logo-icon" aria-hidden="true"><i class="fa fa-tv"></i></div>
         <div class="logo-text">
           <h2><span style="color:var(--yellow)">Electro</span>Shop</h2>
           <p>Smart Appliances, Better Life</p>
         </div>
       </div>
-      <button class="drawer-close" id="drawerClose" aria-label="Close">✕</button>
+      <button class="drawer-close" id="drawerClose" aria-label="Close navigation menu">✕</button>
     </div>
     <div class="drawer-body">
       <ul class="mobile-nav-list">
@@ -479,17 +565,17 @@ footer{background:var(--blue);padding:50px 40px 30px;color:#fff;}
         <li><a href="#about">About Us</a></li>
         <li class="has-m-dropdown">
           <a href="#products" class="m-dd-toggle">
-            Our Products <i class="fa fa-chevron-down m-dd-arrow"></i>
+            Our Products <i class="fa fa-chevron-down m-dd-arrow" aria-hidden="true"></i>
           </a>
           <div class="mobile-dropdown">
-            <a href="#products"><img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=60&h=48&fit=crop&auto=format" alt="">Refrigerators</a>
-            <a href="#products"><img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=60&h=48&fit=crop&auto=format" alt="">Washing Machines</a>
-            <a href="#products"><img src="https://images.unsplash.com/photo-1593359677879-a4bb92f4e5ba?w=60&h=48&fit=crop&auto=format" alt="">Televisions</a>
-            <a href="#products"><img src="https://images.unsplash.com/photo-1599577180412-f2f99b8f03a7?w=60&h=48&fit=crop&auto=format" alt="">Air Conditioners</a>
-            <a href="#products"><img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=60&h=48&fit=crop&auto=format" alt="">Microwaves</a>
-            <a href="#products"><img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=60&h=48&fit=crop&auto=format" alt="">Water Purifiers</a>
-            <a href="#products"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=60&h=48&fit=crop&auto=format" alt="">Kitchen Appliances</a>
-            <a href="#products"><img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?w=60&h=48&fit=crop&auto=format" alt="">More Appliances</a>
+            <a href="#products"><img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=60&h=48&fit=crop&auto=format" alt="Refrigerators" loading="lazy">Refrigerators</a>
+            <a href="#products"><img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=60&h=48&fit=crop&auto=format" alt="Washing Machines" loading="lazy">Washing Machines</a>
+            <a href="#products"><img src="https://images.unsplash.com/photo-1593359677879-a4bb92f4e5ba?w=60&h=48&fit=crop&auto=format" alt="Televisions" loading="lazy">Televisions</a>
+            <a href="#products"><img src="https://images.unsplash.com/photo-1599577180412-f2f99b8f03a7?w=60&h=48&fit=crop&auto=format" alt="Air Conditioners" loading="lazy">Air Conditioners</a>
+            <a href="#products"><img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=60&h=48&fit=crop&auto=format" alt="Microwaves" loading="lazy">Microwaves</a>
+            <a href="#products"><img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=60&h=48&fit=crop&auto=format" alt="Water Purifiers" loading="lazy">Water Purifiers</a>
+            <a href="#products"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=60&h=48&fit=crop&auto=format" alt="Kitchen Appliances" loading="lazy">Kitchen Appliances</a>
+            <a href="#products"><img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?w=60&h=48&fit=crop&auto=format" alt="More Appliances" loading="lazy">More Appliances</a>
           </div>
         </li>
         <li><a href="#gallery">Gallery</a></li>
@@ -504,138 +590,164 @@ footer{background:var(--blue);padding:50px 40px 30px;color:#fff;}
 </div>
 
 <!-- HERO SECTION -->
-<section class="hero" id="home">
+<section class="hero" id="home" aria-label="Featured banners">
   <div class="hero-slides" id="heroSlides">
 
     <!-- SLIDE 1 -->
     <div class="hero-slide">
-      <!-- MOBILE IMAGE (shows only on mobile) -->
       <div class="hero-mobile-img">
-        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=640&h=400&fit=crop&auto=format" alt="Home Appliances">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=640&h=400&fit=crop&auto=format" alt="ElectroShop showroom with a wide range of home appliances" loading="eager">
       </div>
       <div class="hero-content">
-        <h1>Best Appliances<br><span>Better Living</span></h1>
-        <p>Your trusted local store for the best electronic appliances with excellent quality and service.</p>
-        <a href="#contact" class="btn-yellow">Contact Now &rarr;</a>
+        <h1>Quality Appliances<br><span>for Every Home</span></h1>
+        <p>Your neighbourhood's most trusted electronics store — offering top brands, genuine products and reliable after-sales service since 2010.</p>
+        <a href="#contact" class="btn-yellow">Get in Touch &rarr;</a>
       </div>
-      <!-- DESKTOP APPLIANCE IMAGES -->
-      <div class="hero-appliances">
-        <img class="app-fridge" src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=400&h=600&fit=crop&auto=format" alt="Refrigerator">
-        <img class="app-washer" src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=300&h=450&fit=crop&auto=format" alt="Washing Machine">
-        <img class="app-tv" src="https://images.unsplash.com/photo-1593359677879-a4bb92f4e5ba?w=500&h=300&fit=crop&auto=format" alt="Television">
-        <img class="app-ac" src="https://images.unsplash.com/photo-1599577180412-f2f99b8f03a7?w=350&h=200&fit=crop&auto=format" alt="Air Conditioner">
-        <img class="app-micro" src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=250&h=200&fit=crop&auto=format" alt="Microwave">
-        <img class="app-vacuum" src="https://images.unsplash.com/photo-1558317374-067fb5f30001?w=250&h=350&fit=crop&auto=format" alt="Vacuum Cleaner">
+      <div class="hero-appliances" aria-hidden="true">
+        <img class="app-fridge" src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=400&h=600&fit=crop&auto=format" alt="Double-door refrigerator">
+        <img class="app-washer" src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=300&h=450&fit=crop&auto=format" alt="Front-load washing machine">
+        <img class="app-tv" src="https://images.unsplash.com/photo-1593359677879-a4bb92f4e5ba?w=500&h=300&fit=crop&auto=format" alt="Smart LED television">
+        <img class="app-ac" src="https://images.unsplash.com/photo-1599577180412-f2f99b8f03a7?w=350&h=200&fit=crop&auto=format" alt="Split air conditioner">
+        <img class="app-micro" src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=250&h=200&fit=crop&auto=format" alt="Microwave oven">
+        <img class="app-vacuum" src="https://images.unsplash.com/photo-1558317374-067fb5f30001?w=250&h=350&fit=crop&auto=format" alt="Upright vacuum cleaner">
       </div>
     </div>
 
     <!-- SLIDE 2 -->
     <div class="hero-slide">
       <div class="hero-mobile-img">
-        <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=640&h=400&fit=crop&auto=format" alt="Smart Devices">
+        <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=640&h=400&fit=crop&auto=format" alt="Premium smart home devices and electronics" loading="lazy">
       </div>
       <div class="hero-content">
-        <h1>Premium Quality<br><span>Smart Devices</span></h1>
-        <p>Explore our wide range of premium home appliances and electronics at unbeatable prices.</p>
+        <h1>Premium Brands,<br><span>Unbeatable Prices</span></h1>
+        <p>Browse an extensive range of smart home appliances from leading brands — all under one roof, backed by manufacturer warranty and expert guidance.</p>
         <a href="#products" class="btn-yellow">View Products &rarr;</a>
       </div>
-      <div class="hero-appliances">
-        <img class="app-fridge" src="https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=400&h=600&fit=crop&auto=format" alt="Refrigerator 2">
-        <img class="app-washer" src="https://images.unsplash.com/photo-1621874519936-35cd89d5b1e4?w=300&h=450&fit=crop&auto=format" alt="Washer 2">
-        <img class="app-tv" src="https://images.unsplash.com/photo-1461151304267-38231e7d4950?w=500&h=300&fit=crop&auto=format" alt="TV 2">
-        <img class="app-ac" src="https://images.unsplash.com/photo-1561679782-bd5bb5f3ac4b?w=350&h=200&fit=crop&auto=format" alt="AC 2">
-        <img class="app-micro" src="https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=250&h=200&fit=crop&auto=format" alt="Micro 2">
-        <img class="app-vacuum" src="https://images.unsplash.com/photo-1600177977630-d85b9f3ed1a7?w=250&h=350&fit=crop&auto=format" alt="Vacuum 2">
+      <div class="hero-appliances" aria-hidden="true">
+        <img class="app-fridge" src="https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=400&h=600&fit=crop&auto=format" alt="Modern French door refrigerator">
+        <img class="app-washer" src="https://images.unsplash.com/photo-1621874519936-35cd89d5b1e4?w=300&h=450&fit=crop&auto=format" alt="Top-load washing machine">
+        <img class="app-tv" src="https://images.unsplash.com/photo-1461151304267-38231e7d4950?w=500&h=300&fit=crop&auto=format" alt="Ultra HD 4K television">
+        <img class="app-ac" src="https://images.unsplash.com/photo-1561679782-bd5bb5f3ac4b?w=350&h=200&fit=crop&auto=format" alt="Inverter split AC unit">
+        <img class="app-micro" src="https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=250&h=200&fit=crop&auto=format" alt="Convection microwave oven">
+        <img class="app-vacuum" src="https://images.unsplash.com/photo-1600177977630-d85b9f3ed1a7?w=250&h=350&fit=crop&auto=format" alt="Robotic vacuum cleaner">
       </div>
     </div>
 
     <!-- SLIDE 3 -->
     <div class="hero-slide">
       <div class="hero-mobile-img">
-        <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=640&h=400&fit=crop&auto=format" alt="Trusted Store">
+        <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=640&h=400&fit=crop&auto=format" alt="ElectroShop interior - trusted by thousands of customers" loading="lazy">
       </div>
       <div class="hero-content">
-        <h1>Trusted by<br><span>Thousands</span></h1>
-        <p>Over 10,000 satisfied customers trust ElectroShop for all their home appliance needs.</p>
-        <a href="#about" class="btn-yellow">Know More &rarr;</a>
+        <h1>Trusted by<br><span>10,000+ Families</span></h1>
+        <p>Over a decade of serving our community with honest pricing, genuine products and dedicated support — because every home deserves the best.</p>
+        <a href="#about" class="btn-yellow">Our Story &rarr;</a>
       </div>
-      <div class="hero-appliances">
-        <img class="app-fridge" src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=400&h=600&fit=crop&auto=format" alt="Refrigerator 3">
-        <img class="app-washer" src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=300&h=450&fit=crop&auto=format" alt="Washer 3">
-        <img class="app-tv" src="https://images.unsplash.com/photo-1593359677879-a4bb92f4e5ba?w=500&h=300&fit=crop&auto=format" alt="TV 3">
-        <img class="app-ac" src="https://images.unsplash.com/photo-1599577180412-f2f99b8f03a7?w=350&h=200&fit=crop&auto=format" alt="AC 3">
-        <img class="app-micro" src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=250&h=200&fit=crop&auto=format" alt="Micro 3">
-        <img class="app-vacuum" src="https://images.unsplash.com/photo-1558317374-067fb5f30001?w=250&h=350&fit=crop&auto=format" alt="Vacuum 3">
+      <div class="hero-appliances" aria-hidden="true">
+        <img class="app-fridge" src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=400&h=600&fit=crop&auto=format" alt="Stainless steel refrigerator">
+        <img class="app-washer" src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=300&h=450&fit=crop&auto=format" alt="Fully automatic washing machine">
+        <img class="app-tv" src="https://images.unsplash.com/photo-1593359677879-a4bb92f4e5ba?w=500&h=300&fit=crop&auto=format" alt="OLED smart television">
+        <img class="app-ac" src="https://images.unsplash.com/photo-1599577180412-f2f99b8f03a7?w=350&h=200&fit=crop&auto=format" alt="Energy-efficient air conditioner">
+        <img class="app-micro" src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=250&h=200&fit=crop&auto=format" alt="Solo microwave oven">
+        <img class="app-vacuum" src="https://images.unsplash.com/photo-1558317374-067fb5f30001?w=250&h=350&fit=crop&auto=format" alt="Cordless stick vacuum cleaner">
       </div>
     </div>
 
   </div>
-  <div class="hero-yellow-shape"></div>
-  <button class="hero-prev" id="heroPrev"><i class="fa fa-chevron-left"></i></button>
-  <button class="hero-next" id="heroNext"><i class="fa fa-chevron-right"></i></button>
-  <div class="hero-dots" id="heroDots">
-    <button class="hero-dot active"></button>
-    <button class="hero-dot"></button>
-    <button class="hero-dot"></button>
+  <div class="hero-yellow-shape" aria-hidden="true"></div>
+  <button class="hero-prev" id="heroPrev" aria-label="Previous slide"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+  <button class="hero-next" id="heroNext" aria-label="Next slide"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+  <div class="hero-dots" id="heroDots" role="tablist" aria-label="Slide navigation">
+    <button class="hero-dot active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+    <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+    <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
   </div>
 </section>
 
-<!-- ABOUT + PRODUCTS -->
-<section class="about-products" id="about">
+<!-- ABOUT US SECTION -->
+<section class="about-products-wrapper" id="about">
+  <!-- About Card -->
   <div class="about-card">
-    <img class="about-store-img" src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=600&h=400&fit=crop&auto=format" alt="ElectroShop Store">
+    <img class="about-store-img" src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=700&h=500&fit=crop&auto=format" alt="ElectroShop showroom interior with display appliances" loading="lazy">
     <div class="about-text">
       <h2>About Our <span>Shop</span></h2>
-      <p>We are a local electronics store providing high-quality appliances at the best prices. Customer satisfaction is our top priority.</p>
+      <p>Established in 2010, ElectroShop has been a trusted name for home appliances across the city. We stock a curated selection of refrigerators, washing machines, televisions, air conditioners and more from India's leading brands — all under one roof.</p>
+      <p>Our team of trained sales professionals is committed to helping you find the right appliance for your needs and budget, while our dedicated service team ensures you are supported long after purchase.</p>
       <ul class="feature-list">
-        <li><i class="fa fa-check-circle"></i> Best Quality Products</li>
-        <li><i class="fa fa-tag"></i> Affordable Prices</li>
-        <li><i class="fa fa-headset"></i> Smart Customer Support</li>
-        <li><i class="fa fa-users"></i> Trusted by Thousands</li>
+        <li><i class="fa fa-check-circle" aria-hidden="true"></i> 100% Genuine Products with Manufacturer Warranty</li>
+        <li><i class="fa fa-tag" aria-hidden="true"></i> Competitive Prices with No Hidden Charges</li>
+        <li><i class="fa fa-headset" aria-hidden="true"></i> Dedicated After-Sales Support Team</li>
+        <li><i class="fa fa-users" aria-hidden="true"></i> Trusted by 10,000+ Happy Families</li>
       </ul>
-      <a href="#contact" class="btn-yellow">Know More</a>
+      <a href="#contact" class="btn-yellow">Get in Touch</a>
     </div>
   </div>
+
+  <!-- Products Section -->
   <div class="products-section" id="products">
     <div class="section-heading">
       <h2>Our <span>Products</span></h2>
     </div>
     <div class="product-grid">
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=160&h=130&fit=crop&auto=format" alt="Refrigerator">
+      <div class="product-card" role="button" tabindex="0"
+        data-name="Refrigerators"
+        data-img="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=800&h=600&fit=crop&auto=format"
+        data-desc="Keep your food fresher for longer with our wide range of single-door, double-door and side-by-side refrigerators from brands like LG, Samsung, Whirlpool and more. Available in capacities from 185L to 690L to suit every household.">
+        <img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=200&h=160&fit=crop&auto=format" alt="Refrigerators" loading="lazy">
         <p>Refrigerators</p>
       </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=160&h=130&fit=crop&auto=format" alt="Washing Machine">
+      <div class="product-card" role="button" tabindex="0"
+        data-name="Washing Machines"
+        data-img="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=800&h=600&fit=crop&auto=format"
+        data-desc="Choose from fully-automatic top-load, front-load and semi-automatic washing machines. With capacities from 6 kg to 12 kg and features like inverter motors and quick wash, we have the right model for every family.">
+        <img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=200&h=160&fit=crop&auto=format" alt="Washing Machines" loading="lazy">
         <p>Washing Machines</p>
       </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f4e5ba?w=160&h=130&fit=crop&auto=format" alt="Television">
+      <div class="product-card" role="button" tabindex="0"
+        data-name="Televisions"
+        data-img="https://images.unsplash.com/photo-1593359677879-a4bb92f4e5ba?w=800&h=600&fit=crop&auto=format"
+        data-desc="Experience cinema-quality viewing at home with our smart TVs ranging from 32-inch HD to 75-inch 4K OLED panels. Browse Android, Google TV and Fire TV models from Sony, LG, Samsung, Mi and more.">
+        <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f4e5ba?w=200&h=160&fit=crop&auto=format" alt="Televisions" loading="lazy">
         <p>Televisions</p>
       </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1599577180412-f2f99b8f03a7?w=160&h=130&fit=crop&auto=format" alt="Air Conditioner">
+      <div class="product-card" role="button" tabindex="0"
+        data-name="Air Conditioners"
+        data-img="https://images.unsplash.com/photo-1599577180412-f2f99b8f03a7?w=800&h=600&fit=crop&auto=format"
+        data-desc="Stay cool all year round with our 3-star and 5-star rated split and window air conditioners. Featuring inverter technology, auto-clean and Wi-Fi control, available in 1, 1.5 and 2-ton capacities from Daikin, Hitachi, Voltas and more.">
+        <img src="https://images.unsplash.com/photo-1599577180412-f2f99b8f03a7?w=200&h=160&fit=crop&auto=format" alt="Air Conditioners" loading="lazy">
         <p>Air Conditioners</p>
       </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=160&h=130&fit=crop&auto=format" alt="Microwave">
+      <div class="product-card" role="button" tabindex="0"
+        data-name="Microwaves"
+        data-img="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop&auto=format"
+        data-desc="Cook, reheat and bake with ease using our range of solo, grill and convection microwave ovens. Available in 17L to 32L capacities with auto-cook menus, child lock and quick defrost from IFB, Samsung and LG.">
+        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=200&h=160&fit=crop&auto=format" alt="Microwaves" loading="lazy">
         <p>Microwaves</p>
       </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=160&h=130&fit=crop&auto=format" alt="Water Purifier">
+      <div class="product-card" role="button" tabindex="0"
+        data-name="Water Purifiers"
+        data-img="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&h=600&fit=crop&auto=format"
+        data-desc="Ensure safe, clean drinking water for your family with our RO+UV+UF water purifiers from Kent, Aquaguard, Pureit and more. With 7-stage purification and mineral retention technology, fresh water is always a tap away.">
+        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=200&h=160&fit=crop&auto=format" alt="Water Purifiers" loading="lazy">
         <p>Water Purifiers</p>
       </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=160&h=130&fit=crop&auto=format" alt="Kitchen Appliances">
+      <div class="product-card" role="button" tabindex="0"
+        data-name="Kitchen Appliances"
+        data-img="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop&auto=format"
+        data-desc="Upgrade your kitchen with our range of mixer-grinders, food processors, induction cooktops, OTGs, chimneys and dishwashers. Quality brands, competitive prices and expert advice to help you find the right fit.">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=200&h=160&fit=crop&auto=format" alt="Kitchen Appliances" loading="lazy">
         <p>Kitchen Appliances</p>
       </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?w=160&h=130&fit=crop&auto=format" alt="More Appliances">
+      <div class="product-card" role="button" tabindex="0"
+        data-name="More Appliances"
+        data-img="https://images.unsplash.com/photo-1558317374-067fb5f30001?w=800&h=600&fit=crop&auto=format"
+        data-desc="Explore our extensive collection of vacuum cleaners, geysers, ceiling fans, exhaust fans, irons, hair dryers and other personal care appliances. Everything your home needs, all available at ElectroShop.">
+        <img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?w=200&h=160&fit=crop&auto=format" alt="More home appliances and electronics" loading="lazy">
         <p>More Appliances</p>
       </div>
     </div>
     <div style="text-align:center;">
-      <a href="#" class="btn-blue">View All Products &rarr;</a>
+      <a href="#contact" class="btn-blue">Enquire About Products &rarr;</a>
     </div>
   </div>
 </section>
@@ -644,63 +756,73 @@ footer{background:var(--blue);padding:50px 40px 30px;color:#fff;}
 <section class="gallery-testimonial" id="gallery">
   <div class="gallery-section">
     <h2>Our <span>Gallery</span></h2>
+    <p style="font-size:13px;color:var(--gray);margin-bottom:0;">A glimpse inside ElectroShop — where quality appliances meet great service.</p>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=260&fit=crop&auto=format" alt="Showroom"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1605902394048-e9f6d2128d5a?w=400&h=260&fit=crop&auto=format" alt="Washing Machine Section"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=400&h=260&fit=crop&auto=format" alt="TV Display"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=400&h=260&fit=crop&auto=format" alt="Store Interior"></div>
+      <div class="gallery-item" data-caption="ElectroShop Main Showroom" role="button" tabindex="0" aria-label="View showroom image">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=260&fit=crop&auto=format" alt="ElectroShop main showroom floor with appliances on display" loading="lazy">
+      </div>
+      <div class="gallery-item" data-caption="Washing Machine Display Section" role="button" tabindex="0" aria-label="View washing machine display">
+        <img src="https://images.unsplash.com/photo-1605902394048-e9f6d2128d5a?w=400&h=260&fit=crop&auto=format" alt="Washing machine section with front-load and top-load models" loading="lazy">
+      </div>
+      <div class="gallery-item" data-caption="Television Display Wall" role="button" tabindex="0" aria-label="View TV display wall">
+        <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=400&h=260&fit=crop&auto=format" alt="Large TV display wall with 4K and smart televisions" loading="lazy">
+      </div>
+      <div class="gallery-item" data-caption="Store Interior & Customer Area" role="button" tabindex="0" aria-label="View store interior">
+        <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=400&h=260&fit=crop&auto=format" alt="ElectroShop store interior with customer service area" loading="lazy">
+      </div>
     </div>
     <div style="text-align:left;">
-      <a href="#" class="btn-blue">View More Images <i class="fa fa-th"></i></a>
+      <a href="#contact" class="btn-blue">Visit Our Store <i class="fa fa-store" aria-hidden="true"></i></a>
     </div>
   </div>
+
   <div class="testimonial-section" id="reviews">
     <h2>What Our <span>Customers Say</span></h2>
     <div class="testi-slider-wrap">
       <div class="testi-slides" id="testiSlides">
         <div class="testi-slide">
-          <div class="quote-icon">"</div>
+          <div class="quote-icon" aria-hidden="true">"</div>
           <div class="testi-author">
-            <img src="https://ui-avatars.com/api/?name=Rohit+Sharma&size=100&background=4169E1&color=fff&rounded=true" alt="Rohit Sharma">
-            <div class="testi-author-info"><h4>Rohit Sharma</h4><div class="stars">★★★★★</div></div>
+            <img src="https://ui-avatars.com/api/?name=Rohit+Sharma&size=100&background=4169E1&color=fff&rounded=true" alt="Rohit Sharma" loading="lazy">
+            <div class="testi-author-info"><h3>Rohit Sharma</h3><div class="stars" aria-label="5 out of 5 stars">★★★★★</div></div>
           </div>
-          <p class="testi-text">Great collection and excellent customer service. Very happy with my purchase!</p>
+          <p class="testi-text">Bought a Samsung refrigerator last month. The team helped me choose the right model for my family. Great experience — honest advice, no pressure selling and very competitive pricing!</p>
         </div>
         <div class="testi-slide">
-          <div class="quote-icon">"</div>
+          <div class="quote-icon" aria-hidden="true">"</div>
           <div class="testi-author">
-            <img src="https://ui-avatars.com/api/?name=Priya+Patel&size=100&background=E14169&color=fff&rounded=true" alt="Priya Patel">
-            <div class="testi-author-info"><h4>Priya Patel</h4><div class="stars">★★★★★</div></div>
+            <img src="https://ui-avatars.com/api/?name=Priya+Patel&size=100&background=E14169&color=fff&rounded=true" alt="Priya Patel" loading="lazy">
+            <div class="testi-author-info"><h3>Priya Patel</h3><div class="stars" aria-label="5 out of 5 stars">★★★★★</div></div>
           </div>
-          <p class="testi-text">Affordable prices and genuine products. The staff was very helpful and guided me well!</p>
+          <p class="testi-text">I was very confused about which washing machine to buy, but the staff at ElectroShop patiently explained all the differences. Ended up with an IFB front-loader — absolutely love it. Highly recommended!</p>
         </div>
         <div class="testi-slide">
-          <div class="quote-icon">"</div>
+          <div class="quote-icon" aria-hidden="true">"</div>
           <div class="testi-author">
-            <img src="https://ui-avatars.com/api/?name=Arjun+Kumar&size=100&background=41B169&color=fff&rounded=true" alt="Arjun Kumar">
-            <div class="testi-author-info"><h4>Arjun Kumar</h4><div class="stars">★★★★★</div></div>
+            <img src="https://ui-avatars.com/api/?name=Arjun+Kumar&size=100&background=41B169&color=fff&rounded=true" alt="Arjun Kumar" loading="lazy">
+            <div class="testi-author-info"><h3>Arjun Kumar</h3><div class="stars" aria-label="5 out of 5 stars">★★★★★</div></div>
           </div>
-          <p class="testi-text">Bought a refrigerator and washing machine. Both working perfectly. Highly recommend ElectroShop!</p>
+          <p class="testi-text">Purchased an LG 1.5-ton inverter AC and a Sony Bravia TV. Both delivered and installed within 24 hours. The after-sales support has been excellent too. ElectroShop is my go-to store for all appliances!</p>
         </div>
         <div class="testi-slide">
-          <div class="quote-icon">"</div>
+          <div class="quote-icon" aria-hidden="true">"</div>
           <div class="testi-author">
-            <img src="https://ui-avatars.com/api/?name=Sneha+Mehta&size=100&background=E1A141&color=fff&rounded=true" alt="Sneha Mehta">
-            <div class="testi-author-info"><h4>Sneha Mehta</h4><div class="stars">★★★★★</div></div>
+            <img src="https://ui-avatars.com/api/?name=Sneha+Mehta&size=100&background=E1A141&color=fff&rounded=true" alt="Sneha Mehta" loading="lazy">
+            <div class="testi-author-info"><h3>Sneha Mehta</h3><div class="stars" aria-label="5 out of 5 stars">★★★★★</div></div>
           </div>
-          <p class="testi-text">Best electronics store in the city! Fast delivery and excellent after-sales support.</p>
+          <p class="testi-text">Best electronics store in the city by far! Their prices matched the biggest online portals, but with the added advantage of seeing the product and getting expert advice in person. Delivery was fast and the team was professional.</p>
         </div>
       </div>
       <div class="testi-controls">
-        <div class="testi-dots" id="testiDots">
-          <button class="testi-dot active"></button>
-          <button class="testi-dot"></button>
-          <button class="testi-dot"></button>
-          <button class="testi-dot"></button>
+        <div class="testi-dots" id="testiDots" role="tablist" aria-label="Testimonial navigation">
+          <button class="testi-dot active" role="tab" aria-selected="true" aria-label="Review 1"></button>
+          <button class="testi-dot" role="tab" aria-selected="false" aria-label="Review 2"></button>
+          <button class="testi-dot" role="tab" aria-selected="false" aria-label="Review 3"></button>
+          <button class="testi-dot" role="tab" aria-selected="false" aria-label="Review 4"></button>
         </div>
         <div class="testi-arrows">
-          <button class="testi-arrow" id="testiPrev"><i class="fa fa-chevron-left"></i></button>
-          <button class="testi-arrow" id="testiNext"><i class="fa fa-chevron-right"></i></button>
+          <button class="testi-arrow" id="testiPrev" aria-label="Previous review"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+          <button class="testi-arrow" id="testiNext" aria-label="Next review"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
         </div>
       </div>
     </div>
@@ -712,31 +834,41 @@ footer{background:var(--blue);padding:50px 40px 30px;color:#fff;}
   <div class="contact-details-card">
     <h2>Contact <span>Us</span></h2>
     <div class="contact-item">
-      <div class="contact-item-icon"><i class="fa fa-map-marker-alt"></i></div>
-      <div class="contact-item-text"><p>123, Main Street,</p><p>Your City, India - 600001</p></div>
+      <div class="contact-item-icon" aria-hidden="true"><i class="fa fa-map-marker-alt"></i></div>
+      <div class="contact-item-text">
+        <p>123, Main Street</p>
+        <p>Your City, India – 600001</p>
+      </div>
     </div>
     <div class="contact-item">
-      <div class="contact-item-icon"><i class="fa fa-phone"></i></div>
-      <div class="contact-item-text"><p>+91 98765 43210</p></div>
+      <div class="contact-item-icon" aria-hidden="true"><i class="fa fa-phone"></i></div>
+      <div class="contact-item-text">
+        <p>+91 80168 22285</p>
+        <p>+91 98765 43210</p>
+      </div>
     </div>
     <div class="contact-item">
-      <div class="contact-item-icon"><i class="fa fa-envelope"></i></div>
-      <div class="contact-item-text"><p>info@electroshop.com</p></div>
+      <div class="contact-item-icon" aria-hidden="true"><i class="fa fa-envelope"></i></div>
+      <div class="contact-item-text"><p>info@electroshop.in</p></div>
     </div>
     <div class="contact-item">
-      <div class="contact-item-icon"><i class="fa fa-clock"></i></div>
-      <div class="contact-item-text"><p>Mon - Sat: 9:00 AM - 8:00 PM</p><p>Sunday: 10:00 AM - 6:00 PM</p></div>
+      <div class="contact-item-icon" aria-hidden="true"><i class="fa fa-clock"></i></div>
+      <div class="contact-item-text">
+        <p>Mon – Sat: 9:00 AM – 8:00 PM</p>
+        <p>Sunday: 10:00 AM – 6:00 PM</p>
+      </div>
     </div>
   </div>
   <div class="contact-form">
-    <input type="text" placeholder="Your Name">
-    <input type="tel" placeholder="Your Phone">
-    <input type="email" placeholder="Your Email">
-    <textarea placeholder="Your Message"></textarea>
-    <button class="btn-yellow" style="width:100%;justify-content:center;">Send Message <i class="fa fa-paper-plane"></i></button>
+    <h2 style="font-size:18px;margin-bottom:18px;">Send Us a <span style="color:var(--blue)">Message</span></h2>
+    <input type="text" placeholder="Your Name" aria-label="Your name">
+    <input type="tel" placeholder="Your Phone Number" aria-label="Your phone number">
+    <input type="email" placeholder="Your Email Address" aria-label="Your email address">
+    <textarea placeholder="How can we help you? Tell us about the appliance you are looking for..." aria-label="Your message"></textarea>
+    <button class="btn-yellow" id="contactSubmitBtn" style="width:100%;justify-content:center;">Send Message <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
   </div>
   <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0!2d80.2!3d13.08!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA0JzQ4LjAiTiA4MMKwMTInMDAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0!2d80.2!3d13.08!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA0JzQ4LjAiTiA4MMKwMTInMDAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ElectroShop location map"></iframe>
   </div>
 </section>
 
@@ -745,14 +877,14 @@ footer{background:var(--blue);padding:50px 40px 30px;color:#fff;}
   <div class="footer-grid">
     <div class="footer-col">
       <div class="footer-logo">
-        <div class="footer-logo-icon"><i class="fa fa-tv"></i></div>
+        <div class="footer-logo-icon" aria-hidden="true"><i class="fa fa-tv"></i></div>
         <div class="footer-logo-text"><h2>ElectroShop</h2><p>Smart Appliances, Better Life</p></div>
       </div>
-      <p class="footer-desc">Your one-stop destination for all electronic appliances. Quality, trust and best service guaranteed.</p>
+      <p class="footer-desc">Your one-stop destination for all home appliances and electronics. Over a decade of trust, quality products and dedicated service to families across the city.</p>
       <div class="footer-social">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
       </div>
     </div>
     <div class="footer-col">
@@ -768,129 +900,246 @@ footer{background:var(--blue);padding:50px 40px 30px;color:#fff;}
     <div class="footer-col">
       <h3>Our Products</h3>
       <ul class="footer-links">
-        <li><a href="#">Refrigerators</a></li>
-        <li><a href="#">Washing Machines</a></li>
-        <li><a href="#">Televisions</a></li>
-        <li><a href="#">Air Conditioners</a></li>
-        <li><a href="#">More Appliances</a></li>
+        <li><a href="#products">Refrigerators</a></li>
+        <li><a href="#products">Washing Machines</a></li>
+        <li><a href="#products">Televisions</a></li>
+        <li><a href="#products">Air Conditioners</a></li>
+        <li><a href="#products">More Appliances</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h3>Contact Info</h3>
-      <div class="footer-contact-item"><i class="fa fa-map-marker-alt"></i><span>123, Main Street,<br>Your City, India - 600001</span></div>
-      <div class="footer-contact-item"><i class="fa fa-phone"></i><span>+91 98765 43210</span></div>
-      <div class="footer-contact-item"><i class="fa fa-envelope"></i><span>info@electroshop.com</span></div>
+      <div class="footer-contact-item"><i class="fa fa-map-marker-alt" aria-hidden="true"></i><span>123, Main Street,<br>Your City, India – 600001</span></div>
+      <div class="footer-contact-item"><i class="fa fa-phone" aria-hidden="true"></i><span>+91 80168 22285</span></div>
+      <div class="footer-contact-item"><i class="fa fa-envelope" aria-hidden="true"></i><span>info@electroshop.in</span></div>
     </div>
   </div>
 </footer>
 <div class="copyright">
-  <span>© 2026 Redalphas. All Rights Reserved.</span>
+  <span>© 2024 ElectroShop. All Rights Reserved.</span>
   <span>Designed with ❤️ for Better Living</span>
 </div>
 
-<a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank">
-  <i class="fab fa-whatsapp"></i>
+<a href="https://wa.me/918016822285" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+  <i class="fab fa-whatsapp" aria-hidden="true"></i>
   <span>Chat on WhatsApp</span>
 </a>
 
+<!-- PRODUCT MODAL -->
+<div class="modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Close product details">✕</button>
+    <img class="modal-img" id="modalImg" src="" alt="">
+    <div class="modal-body">
+      <span class="modal-tag">ElectroShop Collection</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY MODAL -->
+<div class="gallery-modal-overlay" id="galleryModal" role="dialog" aria-modal="true" aria-label="Gallery image preview">
+  <div class="gallery-modal-img-wrap">
+    <button class="gallery-modal-close" id="galleryModalClose" aria-label="Close gallery preview">✕</button>
+    <img id="galleryModalImg" src="" alt="">
+  </div>
+  <p class="gallery-modal-caption" id="galleryModalCaption"></p>
+</div>
+
 <script>
-// ---- HERO SLIDER ----
-let heroIdx=0;
-const heroSlidesEl=document.getElementById('heroSlides');
-const heroDots=document.querySelectorAll('.hero-dot');
-const totalHero=3;
-let heroTimer;
-function goHero(n){
-  heroIdx=(n+totalHero)%totalHero;
-  heroSlidesEl.style.transform=`translateX(-${heroIdx*100}%)`;
-  heroDots.forEach((d,i)=>d.classList.toggle('active',i===heroIdx));
+// ---- HERO SLIDER (manual only — no auto-play) ----
+let heroIdx = 0;
+const heroSlidesEl = document.getElementById('heroSlides');
+const heroDots = document.querySelectorAll('.hero-dot');
+const totalHero = 3;
+
+function goHero(n) {
+  heroIdx = (n + totalHero) % totalHero;
+  heroSlidesEl.style.transform = `translateX(-${heroIdx * 100}%)`;
+  heroDots.forEach((d, i) => {
+    d.classList.toggle('active', i === heroIdx);
+    d.setAttribute('aria-selected', i === heroIdx ? 'true' : 'false');
+  });
 }
-function startHeroAuto(){clearInterval(heroTimer);heroTimer=setInterval(()=>goHero(heroIdx+1),4500);}
-document.getElementById('heroNext').addEventListener('click',()=>{goHero(heroIdx+1);startHeroAuto();});
-document.getElementById('heroPrev').addEventListener('click',()=>{goHero(heroIdx-1);startHeroAuto();});
-heroDots.forEach((d,i)=>d.addEventListener('click',()=>{goHero(i);startHeroAuto();}));
-startHeroAuto();
+
+document.getElementById('heroNext').addEventListener('click', () => goHero(heroIdx + 1));
+document.getElementById('heroPrev').addEventListener('click', () => goHero(heroIdx - 1));
+heroDots.forEach((d, i) => d.addEventListener('click', () => goHero(i)));
+
 // Hero touch swipe
-let heroTX=null;
-const heroEl=document.querySelector('.hero');
-heroEl.addEventListener('touchstart',e=>{heroTX=e.touches[0].clientX;},{passive:true});
-heroEl.addEventListener('touchend',e=>{
-  if(heroTX===null)return;
-  const dx=e.changedTouches[0].clientX-heroTX;
-  if(Math.abs(dx)>40){goHero(dx<0?heroIdx+1:heroIdx-1);startHeroAuto();}
-  heroTX=null;
-},{passive:true});
+let heroTX = null;
+const heroEl = document.querySelector('.hero');
+heroEl.addEventListener('touchstart', e => { heroTX = e.touches[0].clientX; }, { passive: true });
+heroEl.addEventListener('touchend', e => {
+  if (heroTX === null) return;
+  const dx = e.changedTouches[0].clientX - heroTX;
+  if (Math.abs(dx) > 40) goHero(dx < 0 ? heroIdx + 1 : heroIdx - 1);
+  heroTX = null;
+}, { passive: true });
 
 // ---- TESTIMONIAL SLIDER ----
-let testiIdx=0;
-const testiSlidesEl=document.getElementById('testiSlides');
-const testiDots=document.querySelectorAll('.testi-dot');
-const totalTesti=4;
+let testiIdx = 0;
+const testiSlidesEl = document.getElementById('testiSlides');
+const testiDots = document.querySelectorAll('.testi-dot');
+const totalTesti = 4;
 let testiTimer;
-function goTesti(n){
-  testiIdx=(n+totalTesti)%totalTesti;
-  testiSlidesEl.style.transform=`translateX(-${testiIdx*100}%)`;
-  testiDots.forEach((d,i)=>d.classList.toggle('active',i===testiIdx));
+
+function goTesti(n) {
+  testiIdx = (n + totalTesti) % totalTesti;
+  testiSlidesEl.style.transform = `translateX(-${testiIdx * 100}%)`;
+  testiDots.forEach((d, i) => {
+    d.classList.toggle('active', i === testiIdx);
+    d.setAttribute('aria-selected', i === testiIdx ? 'true' : 'false');
+  });
 }
-function startTestiAuto(){clearInterval(testiTimer);testiTimer=setInterval(()=>goTesti(testiIdx+1),5000);}
-document.getElementById('testiNext').addEventListener('click',()=>{goTesti(testiIdx+1);startTestiAuto();});
-document.getElementById('testiPrev').addEventListener('click',()=>{goTesti(testiIdx-1);startTestiAuto();});
-testiDots.forEach((d,i)=>d.addEventListener('click',()=>{goTesti(i);startTestiAuto();}));
+
+function startTestiAuto() {
+  clearInterval(testiTimer);
+  testiTimer = setInterval(() => goTesti(testiIdx + 1), 5000);
+}
+
+document.getElementById('testiNext').addEventListener('click', () => { goTesti(testiIdx + 1); startTestiAuto(); });
+document.getElementById('testiPrev').addEventListener('click', () => { goTesti(testiIdx - 1); startTestiAuto(); });
+testiDots.forEach((d, i) => d.addEventListener('click', () => { goTesti(i); startTestiAuto(); }));
 startTestiAuto();
+
 // Testi swipe
-let testiTX=null;
-const testiWrap=document.querySelector('.testi-slider-wrap');
-testiWrap.addEventListener('touchstart',e=>{testiTX=e.touches[0].clientX;},{passive:true});
-testiWrap.addEventListener('touchend',e=>{
-  if(testiTX===null)return;
-  const dx=e.changedTouches[0].clientX-testiTX;
-  if(Math.abs(dx)>40){goTesti(dx<0?testiIdx+1:testiIdx-1);startTestiAuto();}
-  testiTX=null;
-},{passive:true});
+let testiTX = null;
+const testiWrap = document.querySelector('.testi-slider-wrap');
+testiWrap.addEventListener('touchstart', e => { testiTX = e.touches[0].clientX; }, { passive: true });
+testiWrap.addEventListener('touchend', e => {
+  if (testiTX === null) return;
+  const dx = e.changedTouches[0].clientX - testiTX;
+  if (Math.abs(dx) > 40) { goTesti(dx < 0 ? testiIdx + 1 : testiIdx - 1); startTestiAuto(); }
+  testiTX = null;
+}, { passive: true });
 
 // ---- MOBILE DRAWER ----
-const hamburger=document.getElementById('hamburger');
-const mobileMenu=document.getElementById('mobileMenu');
-const drawerClose=document.getElementById('drawerClose');
-function openDrawer(){mobileMenu.classList.add('open');hamburger.classList.add('open');document.body.style.overflow='hidden';}
-function closeDrawer(){mobileMenu.classList.remove('open');hamburger.classList.remove('open');document.body.style.overflow='';}
-hamburger.addEventListener('click',()=>mobileMenu.classList.contains('open')?closeDrawer():openDrawer());
-drawerClose.addEventListener('click',closeDrawer);
-mobileMenu.addEventListener('click',e=>{if(e.target===mobileMenu)closeDrawer();});
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const drawerClose = document.getElementById('drawerClose');
 
-// Mobile dropdown toggle (Our Products)
-document.querySelectorAll('.m-dd-toggle').forEach(btn=>{
-  btn.addEventListener('click',function(e){
+function openDrawer() {
+  mobileMenu.classList.add('open');
+  hamburger.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  mobileMenu.classList.remove('open');
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', () => mobileMenu.classList.contains('open') ? closeDrawer() : openDrawer());
+drawerClose.addEventListener('click', closeDrawer);
+mobileMenu.addEventListener('click', e => { if (e.target === mobileMenu) closeDrawer(); });
+
+// Mobile dropdown toggle
+document.querySelectorAll('.m-dd-toggle').forEach(btn => {
+  btn.addEventListener('click', function(e) {
     e.preventDefault();
-    const li=this.closest('.has-m-dropdown');
-    const isOpen=li.classList.contains('m-open');
-    // close all
-    document.querySelectorAll('.mobile-nav-list>li').forEach(l=>l.classList.remove('m-open'));
-    if(!isOpen) li.classList.add('m-open');
+    const li = this.closest('.has-m-dropdown');
+    const isOpen = li.classList.contains('m-open');
+    document.querySelectorAll('.mobile-nav-list>li').forEach(l => l.classList.remove('m-open'));
+    if (!isOpen) li.classList.add('m-open');
   });
 });
 
-// Close drawer when a non-dropdown nav link is clicked
-document.querySelectorAll('.mobile-nav-list>li:not(.has-m-dropdown)>a, .drawer-contact-btn, .mobile-dropdown a').forEach(a=>{
-  a.addEventListener('click',closeDrawer);
+// Close drawer on link clicks
+document.querySelectorAll('.mobile-nav-list>li:not(.has-m-dropdown)>a, .drawer-contact-btn, .mobile-dropdown a').forEach(a => {
+  a.addEventListener('click', closeDrawer);
 });
 
 // ---- SCROLL NAV ACTIVE ----
-const sections=document.querySelectorAll('section[id]');
-const navLinks=document.querySelectorAll('.nav-menu>li>a');
-window.addEventListener('scroll',()=>{
-  let current='';
-  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-120)current=s.id;});
-  navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current));
-},{passive:true});
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-menu>li>a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+}, { passive: true });
+
+// ---- PRODUCT MODAL ----
+const productModal = document.getElementById('productModal');
+const modalImg = document.getElementById('modalImg');
+const modalTitle = document.getElementById('modalTitle');
+const modalDesc = document.getElementById('modalDesc');
+const modalClose = document.getElementById('modalClose');
+
+function openProductModal(card) {
+  modalImg.src = card.dataset.img;
+  modalImg.alt = card.dataset.name;
+  modalTitle.textContent = card.dataset.name;
+  modalDesc.textContent = card.dataset.desc;
+  productModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProductModal() {
+  productModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.product-card').forEach(card => {
+  card.addEventListener('click', () => openProductModal(card));
+  card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openProductModal(card); }});
+});
+
+modalClose.addEventListener('click', closeProductModal);
+productModal.addEventListener('click', e => { if (e.target === productModal) closeProductModal(); });
+
+// ---- GALLERY MODAL ----
+const galleryModal = document.getElementById('galleryModal');
+const galleryModalImg = document.getElementById('galleryModalImg');
+const galleryModalCaption = document.getElementById('galleryModalCaption');
+const galleryModalClose = document.getElementById('galleryModalClose');
+
+function openGalleryModal(item) {
+  const img = item.querySelector('img');
+  galleryModalImg.src = img.src.replace(/w=400&h=260/, 'w=1200&h=800');
+  galleryModalImg.alt = img.alt;
+  galleryModalCaption.textContent = item.dataset.caption || '';
+  galleryModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeGalleryModal() {
+  galleryModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.gallery-item').forEach(item => {
+  item.addEventListener('click', () => openGalleryModal(item));
+  item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openGalleryModal(item); }});
+});
+
+galleryModalClose.addEventListener('click', closeGalleryModal);
+galleryModal.addEventListener('click', e => { if (e.target === galleryModal) closeGalleryModal(); });
+
+// ESC key closes any open modal
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeProductModal();
+    closeGalleryModal();
+  }
+});
 
 // ---- CONTACT FORM ----
-document.querySelector('.contact-form .btn-yellow').addEventListener('click',function(e){
+document.getElementById('contactSubmitBtn').addEventListener('click', function(e) {
   e.preventDefault();
-  const inputs=document.querySelectorAll('.contact-form input,.contact-form textarea');
-  let ok=true;
-  inputs.forEach(i=>{if(!i.value.trim()){i.style.borderColor='red';ok=false;}else{i.style.borderColor='';}});
-  if(ok){alert('Thank you! Your message has been sent.');inputs.forEach(i=>i.value='');}
+  const inputs = document.querySelectorAll('.contact-form input,.contact-form textarea');
+  let ok = true;
+  inputs.forEach(i => {
+    if (!i.value.trim()) { i.style.borderColor = 'red'; ok = false; }
+    else { i.style.borderColor = ''; }
+  });
+  if (ok) {
+    alert('Thank you! Your message has been received. We will get back to you shortly.');
+    inputs.forEach(i => i.value = '');
+  }
 });
 </script>
 </body>
